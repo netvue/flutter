@@ -5,6 +5,7 @@
 import 'dart:async';
 
 import 'package:meta/meta.dart';
+import 'package:stack_trace/stack_trace.dart';
 
 import '../convert.dart';
 import '../globals.dart' as globals;
@@ -609,7 +610,13 @@ class VerboseLogger extends DelegatingLogger {
 
   @override
   void printTrace(String message) {
-    _emit(_LogType.trace, message);
+    int index=  1;
+    Trace t = Trace.current();
+    Frame f = t.frames[index];
+    while (f.member.endsWith('printTrace')) {
+      f = t.frames[++index];
+    }
+    _emit(_LogType.trace, '${f.uri}:${f.line} ${f.member} $message');
   }
 
   @override

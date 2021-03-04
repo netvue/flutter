@@ -276,7 +276,7 @@ A problem occurred configuring root project 'android'.
 > Could not resolve all artifacts for configuration ':classpath'.
    > Could not resolve net.sf.proguard:proguard-gradle:6.0.3.
      Required by:
-         project : > com.android.tools.build:gradle:3.3.0
+         project : > com.android.tools.build:gradle:4.1.2
       > Could not resolve net.sf.proguard:proguard-gradle:6.0.3.
          > Could not parse POM https://jcenter.bintray.com/net/sf/proguard/proguard-gradle/6.0.3/proguard-gradle-6.0.3.pom
             > Could not resolve net.sf.proguard:proguard-parent:6.0.3.
